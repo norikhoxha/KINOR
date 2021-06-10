@@ -1,0 +1,112 @@
+<html>
+<head>
+    <style>
+        body {
+        background-color:#101677 ;
+        text-align: center;
+        margin: 0 auto;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #form{
+            width: 62%;
+            margin: 0 auto;
+            background-color: white;
+        }
+        select {
+			width: 70%;
+  			padding: 12px 20px;
+  			margin: 8px 0;
+		    box-sizing: border-box;
+		}
+        input[type=submit]{
+			width: 20%;
+			float: right;
+			margin-right: 10px;
+			border-radius: 4px;
+			background-color: red;
+			color: yellow;
+			padding-left: 20px;
+			font-style: bold;
+		}
+        input {
+  			width: 70%;
+  			padding: 12px 20px;
+  			margin: 8px 0;
+		    box-sizing: border-box;
+		}
+        h1 {
+    color: #FF0000;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+    </style>
+</head>
+<body><br><br><br>
+    <h1>KINOR</h1>
+<div id="form">
+    <form action="login.html" name="myForm" method="POST" onsubmit="return(validate());">
+        <br>
+        Username
+        <input type="text" name="name" required/><br><br>
+        Zip kodi
+        <input type="text" name="zipkodi"/><br><br>
+        Zgjedh ndonje shtet
+        <select name="shteti">
+        <option value="-1" selected></option>
+        <option value="XK">Kosova</option>
+        <option value="AL">Shqiperia</option>
+        <option value="MK">Maqedonia e Veriut</option>
+        <option value="MN">Mali i Zi</option>
+        <option value="SR">Serbi</option>
+        </select><br><br>
+        Numri i telefonit
+        <input type="tel" name="telfoni"><br><br>
+        Data e Lindjes
+        <input type="date" name="data"><br><br>
+        Password
+        <input type="password" name="password" required/><br><br>
+        
+        <input type="submit" value="Regjistrohu"/>
+        </form>
+</div>
+<script>
+	function validate(){
+		if (document.myForm.name.value == "") {
+
+			alert("Plotesoje emrin");
+			document.myForm.name.focus();
+			return false;
+		}
+		if (document.myForm.surname.value == "") {
+
+			alert("Plotesoje mbiemrin");
+			document.myForm.surname.focus();
+			return false;
+		}
+		if (document.myForm.email.value == "") {
+			alert("Plotesoje email-in");
+			document.myForm.email.focus();
+			return false;
+		}
+		if (document.myForm.telefoni.value == "") {
+			alert("Plotesoje numrin e telefon-it");
+			document.myForm.email.focus();
+			return false;
+		}
+		if (document.myForm.zipkodi == "" || document.myForm.zipkodi.value.length !=5) {
+			alert("Sheno zipkodin");
+			return false;
+		}
+		if (document.myForm.shteti.value == "-1") {
+			alert("Zgjidhe shtetin qe i perket");
+			return false;
+		}
+		if (document.myForm.password.value.length > 8 || document.myForm.shteti.value == "") {
+			alert("Passwordi duhet te ket se paku 8 shkronja");
+			document.myForm.email.focus();
+			return false;
+		}
+	}
+	
+</script>
+</body>
+</html>

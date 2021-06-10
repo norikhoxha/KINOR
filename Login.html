@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+        body {
+        background-color:#101677 ;
+        text-align: center;
+        margin: 0 auto;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #login{
+            width: 62%;
+            margin: 0 auto;
+            background-color: white;
+        }
+        input[type=submit]{
+			width: 20%;
+			float: right;
+			margin-right: 10px;
+			border-radius: 4px;
+			background-color: red;
+			color: yellow;
+			padding-left: 20px;
+			font-style: bold;
+		}
+        input {
+  			width: 70%;
+  			padding: 12px 20px;
+  			margin: 8px 0;
+		    box-sizing: border-box;
+		}
+        h1 {
+    color: #FF0000;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+        </style>
+    </head>
+    <body><br><br><br><br>
+        <h1>KINOR</h1>
+        <div id="login" style="text-align: left; padding-left: 5%;padding: 5%;">
+            <p>Nese nuk keni krijuar llogari klikoni ketu: <a href="form.html">Regjitrohu</a></p>
+            <h2>Log-in</h2>
+            <form action="rezervo.html" name="myForm" method="POST" onsubmit="return(validate());">
+                Username<br>
+            <input type="text" name="email" required/><br><br>
+               Password<br>
+            <input type="password" name="password" required/><br><br>
+            <input type="submit" value="Dergo"/>
+            </form>
+        </div>
+
+        <script>
+            function validate(){
+                if (document.myForm.text.value == "") {
+                    alert("Plotesoje email-in");
+                    document.myForm.text.focus();
+                    return false;
+                }
+                if (document.myForm.password.value == "" || document.myForm.password.value.length < 8) {
+                    alert("Plotesoje password-in");
+                    document.myForm.password.focus();
+                    return false;
+                }
+            }
+            
+        </script>
+    </body>
+</html>
